@@ -7,11 +7,10 @@
 #    1.  ENVIRONMENT SETUP                                                                                              #
 #    2.  MAKE TERMINAL BETTER                                                                                           #
 #    3.  MISC ALIAS'                                                                                                    #
-#    4.  GIT SHORTCUTS                                                                                                  #
 #                                                                                                                       #
 #    Took inspiration from other zsh profiles, modifying this was a great way of learning, greatly recommended.         #
 #                                                                                                                       #
-#    - Last modified: 12 March 2024                                                                                     #
+#    - Last modified: 18 March 2024                                                                                     #
 # --------------------------------------------------------------------------------------------------------------------- #
 
 # --------------------------------------------------------------------------------------------------------------------- #
@@ -66,7 +65,21 @@ add-zsh-hook precmd precmd_vcs_info
 PROMPT='%F{42}%*%f | %F{214}%3~%f | 🍍 '
 RPROMPT='${vcs_info_msg_0_}'
 
+git_autoconfig() {
 
+    if [[ $PWD == ~/dev/GA/* ]]; then
+        git config --local user.name 'GAJorge'
+        git config --local user.email 'jorge.utrera@globalalumni.org'
+        echo "Git profile"
+    elif [[ $PWD == ~/dev/j1dev/* ]]; then
+        git config --local user.name 'J1Loop'
+        git config --local user.email 'j1dev@proton.me'
+    fi
+}
+
+# Usar el hook chpwd para ejecutar la función automáticamente al cambiar de directorio
+autoload -U add-zsh-hook
+add-zsh-hook chpwd git_autoconfig
 
 # --------------------------------------------------------------------------------------------------------------------- #
 # ---------------------------------------------- 2. MAKE TERMINAL BETTER ---------------------------------------------- #
@@ -97,6 +110,7 @@ alias editsshconfig="code ~/.ssh/config"                                # Edit t
 # Navigation
 alias j1dev='clear && cd ~/dev/j1dev/ && ll'                            # Go to j1dev/ & list files
 alias j1aws="cd ~/dev/j1dev/aws-inquirer/ && git1dev && vactivate"      # Go to aws-inquirer/ & activate venv
+alias j1zsh="cd ~/dev/j1dev/j1zsh/ && git1dev"                          # Go to j1zsh/
 alias GA='clear && cd ~/dev/GA/ && ll'                                  # Go to GA/ & list files
 alias athena='cd ~/dev/GA/Athena/scripts/ && vactivate'                 # Go to Athena/ & activate venv
 
