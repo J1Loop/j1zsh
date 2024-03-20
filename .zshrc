@@ -66,14 +66,16 @@ PROMPT='%F{42}%*%f | %F{214}%3~%f | 🍍 '
 RPROMPT='${vcs_info_msg_0_}'
 
 git_autoconfig() {
-
-    if [[ $PWD == ~/dev/GA/* ]]; then
-        git config --local user.name 'GAJorge'
-        git config --local user.email 'jorge.utrera@globalalumni.org'
-        echo "Git profile"
-    elif [[ $PWD == ~/dev/j1dev/* ]]; then
-        git config --local user.name 'J1Loop'
-        git config --local user.email 'j1dev@proton.me'
+    if git rev-parse --is-inside-work-tree > /dev/null 2>&1; then
+        if [[ $PWD == ~/dev/GA/* ]]; then
+            git config --local user.name 'GAJorge'
+            git config --local user.email 'jorge.utrera@globalalumni.org'
+        elif [[ $PWD == ~/dev/j1dev/* ]]; then
+            git config --local user.name 'J1Loop'
+            git config --local user.email 'j1dev@proton.me'
+        fi
+    # else
+        # echo "Not inside a Git repository"
     fi
 }
 
