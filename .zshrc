@@ -143,6 +143,9 @@ gpush() {
 
 # Python
 alias py='python'
+
+alias pyv='python --version'
+
 alias createvenv='python3 -m venv .venv && vactivate'
 alias vactivate='source .venv/bin/activate && code . -n'
 alias pycheck='clear; black $(pwd) && pylint $(pwd)'
