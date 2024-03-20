@@ -10,7 +10,7 @@
 #                                                                                                                       #
 #    Took inspiration from other zsh profiles, modifying this was a great way of learning, greatly recommended.         #
 #                                                                                                                       #
-#    - Last modified: 20 March 2024
+#    - Last modified: 18 March 2024                                                                                     #
 # --------------------------------------------------------------------------------------------------------------------- #
 
 # --------------------------------------------------------------------------------------------------------------------- #
@@ -74,8 +74,6 @@ git_autoconfig() {
             git config --local user.name 'J1Loop'
             git config --local user.email 'j1dev@proton.me'
         fi
-    # else
-        # echo "Not inside a Git repository"
     fi
 }
 
