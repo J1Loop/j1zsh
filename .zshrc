@@ -104,9 +104,9 @@ alias mkdir='mkdir -pv'                                                 # Make p
 
 
 # Editing common files
-alias editzsh="code ~/dev/j1dev/j1zsh/"                                 # Edit the .zshrc repository
+alias editzsh="code ~/.zshrc"                                           # Edit the .zshrc file
 alias editaws="code ~/.aws/"                                            # Edit the .aws folder
-alias editssh="code ~/.ssh/config"                                      # Edit the ssh config file
+alias editsshconfig="code ~/.ssh/config"                                # Edit the ssh config file
 
 
 # Navigation
