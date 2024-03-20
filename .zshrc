@@ -74,8 +74,6 @@ git_autoconfig() {
             git config --local user.name 'J1Loop'
             git config --local user.email 'j1dev@proton.me'
         fi
-    # else
-        # echo "Not inside a Git repository"
     fi
 }
 
