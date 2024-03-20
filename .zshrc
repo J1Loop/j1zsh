@@ -104,9 +104,9 @@ alias mkdir='mkdir -pv'                                                 # Make p
 
 
 # Editing common files
-alias editzsh="code ~/.zshrc"                                           # Edit the .zshrc file
+alias editzsh="code ~/dev/j1dev/j1zsh/"                                 # Edit the .zshrc repository
 alias editaws="code ~/.aws/"                                            # Edit the .aws folder
-alias editsshconfig="code ~/.ssh/config"                                # Edit the ssh config file
+alias editssh="code ~/.ssh/config"                                      # Edit the ssh config file
 
 
 # Navigation
@@ -136,6 +136,12 @@ alias brewup-cask='brewup && brew cask outdated | awk "{print $1}" | xargs brew 
 alias git1dev="git config --local user.name 'J1Loop' && git config --local user.email 'j1dev@proton.me'"
 alias gitclean="git fetch -p ; git branch -r | awk '{print \$1}' | egrep -v -f /dev/fd/0 <(git branch -vv | grep origin) | awk '{print \$1}' | xargs git branch -d"
 alias gitopen='URL=$(git config --get remote.origin.url); open "${URL/.git/}"'
+gpush() {
+  git push "$@"
+  if [ $? -eq 0 ]; then
+  source ~/.zshrc
+  fi
+}
 
 # Python
 alias py='python'
