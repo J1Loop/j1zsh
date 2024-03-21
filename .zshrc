@@ -10,7 +10,7 @@
 #                                                                                                                       #
 #    Took inspiration from other zsh profiles, modifying this was a great way of learning, greatly recommended.         #
 #                                                                                                                       #
-#    - Last modified: 20 March 2024
+#    - Last modified: 21 March 2024
 # --------------------------------------------------------------------------------------------------------------------- #
 
 # --------------------------------------------------------------------------------------------------------------------- #
